@@ -33,7 +33,7 @@ export const LoginPage = () => {
               mt: 2,
             }}
           >
-            <Button variant='contained' fullWidth>Ingresar</Button>
+            <Button component={ RouterLink } variant='contained' fullWidth to='/'>Ingresar</Button>
           </Grid>
 
           <Grid container

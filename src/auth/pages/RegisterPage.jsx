@@ -34,7 +34,7 @@ export const RegisterPage = () => {
               mt: 2,
             }}
           >
-            <Button variant='contained' fullWidth>Crear cuenta</Button>
+            <Button component={ RouterLink } variant='contained' fullWidth to='/'>Crear cuenta</Button>
           </Grid>
 
           <Grid container
