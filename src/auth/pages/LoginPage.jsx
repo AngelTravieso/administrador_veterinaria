@@ -1,9 +1,26 @@
 import { Button, Grid, Link, TextField } from '@mui/material';
-import { Link as RouterLink } from 'react-router-dom';
+import { useContext } from 'react';
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context';
 
 import { AuthLayout } from '../layout/AuthLayout';
 
 export const LoginPage = () => {
+
+  const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const onLogin = () => {
+    
+    login( 'Angel Travieso' );
+
+    navigate('/', {
+      replace: true,
+    });
+
+  }
+
+
   return (
     <AuthLayout title='Ingresar'>
           <Grid item
@@ -33,7 +50,7 @@ export const LoginPage = () => {
               mt: 2,
             }}
           >
-            <Button component={ RouterLink } variant='contained' fullWidth to='/'>Ingresar</Button>
+            <Button variant='contained' fullWidth onClick={ onLogin }>Ingresar</Button>
           </Grid>
 
           <Grid container
